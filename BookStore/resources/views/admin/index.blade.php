@@ -9,6 +9,7 @@
       <div class="page-content">
         <div class="page-header">
           <div class="container-fluid">
+            
             @include('admin.body')
 
             </div>
@@ -24,4 +25,4 @@
     <script src="{{asset('admincss/js/charts-home.js')}}"></script>
     <script src="{{asset('admincss/js/front.js')}}"></script>
   </body>
-</html>/admincss/
+</html>
