@@ -16,23 +16,22 @@
             margin: 30px;
         }
 
-        .table_deg{
+        .table_deg {
             text-align: center;
             margin: auto;
             border: 2px solid yellowgreen;
-            margin: top 50px ;
+            margin: top 50px;
             width: 600px;
         }
 
-        th{
+        th {
             background-color: skyblue;
             padding: 15px;
-            font-size: 20px
-            font-weight: bold;
+            font-size: 20px font-weight: bold;
             color: white;
         }
 
-        td{
+        td {
             color: white;
             padding: 10px;
             border: 1px solid skyblue;
@@ -67,16 +66,20 @@
                         <th>Delete</th>
                     </tr>
                     @foreach ($data as $category)
-                    
-                    <tr>
-                        <td>{{$category->category_name}}</td>
-                        <td>
-                            <a class= "btn btn-success" href="{{url('edit_category',$category->id)}}">Edit</a>
-                        </td>
-                        <td>
-                            <a class= "btn btn-danger" href="{{url('delete_category',$category->id)}}">Delete</a>
-                        </td>
-                    </tr>
+
+                        <tr>
+                            <td>{{$category->category_name}}</td>
+                            <td>
+                                <a class="btn btn-success" href="{{url('edit_category', $category->id)}}">Edit</a>
+                            </td>
+                            <td>
+                                <form action="{{ route('delete_category', $category->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
                     @endforeach
                 </table>
             </div>

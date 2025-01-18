@@ -29,7 +29,7 @@
                 </div>
                 <form action="{{url('update_category',$data->id)}}" method="POST">
                     @csrf
-
+                    @method('PUT')
                     <input type="text" name="category" value="{{$data->category_name}}">
                     <input class="btn btn-secondary" type="submit" value="Update Category" >
                 </form>

@@ -60,10 +60,14 @@
                                 <td>{{$products->quantity}}</td>
                                 <td><img height="120" width="120" alt="image" src="products/{{$products->image}}"></td>
                                 <td>
-                                    <a class="btn btn-success" href="{{url('update_product',$products->id)}}">Update</a>
+                                    <a class="btn btn-success" href="{{url('update_product', $products->id)}}">Update</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" href="{{url('delete_product',$products->id)}}">Delete</a>
+                                    <form action="{{ route('delete_product', $products->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE') 
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

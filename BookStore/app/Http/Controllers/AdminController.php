@@ -82,10 +82,13 @@ class AdminController extends Controller
     public function delete_product($id)
     {
         $data = Product::find($id);
-        $image_path = public_path('products/'. $data->image);
-        if (file_exists($image_path))
-        {
-            unlink($image_path);
+        if ($data->image) {
+            $image_path = public_path('products/' . $data->image);
+    
+            // Check if the file exists and is not a directory
+            if (file_exists($image_path) && is_file($image_path)) {
+                unlink($image_path); // Delete the image file
+            }
         }
         $data->delete();
         toastr()->warning('Product deleted');

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\User;
+
 
 use Illuminate\Http\Request;
 
@@ -9,8 +11,9 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = User::all()->count();
-        return view('admin.index');
+        $user = User::where('usertype','user')->get()->count();
+        $product_count = Product::all()->count();
+        return view('admin.index', compact('user','product_count'));
     }
 
     public function home()
