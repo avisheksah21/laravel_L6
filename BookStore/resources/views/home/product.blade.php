@@ -9,36 +9,39 @@
     </div>
     <div class="row">
 
-    @foreach ($product as $products)
+      @foreach ($product as $products)
 
 
       <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="box">
-        
+
         <div class="img-box">
-          <img src="products/{{$products->image}}" alt="image">
+        <img src="{{$products->image}}" alt="image">
         </div>
         <div class="detail-box">
-          <h6>
+        <h6>
           {{$products->title}}
-          </h6>
-          <h6>
+        </h6>
+        <h6>
           Price
           <span>
-            {{$products->price}}
+          {{$products->price}}
           </span>
-          </h6>
+        </h6>
         </div>
-       
+
         <div style="padding: 15px;">
-          <a class="btn btn-danger" href="{{url('product_details',$products->id)}}">Details</a>
+        <a class="btn btn-danger" href="{{url('product_details', $products->id)}}">Details</a>
         </div>
 
       </div>
       </div>
     @endforeach
     </div>
-
+    <!-- Pagination Links -->
+    <div class="d-flex justify-content-center mt-4">
+      {{ $product->links() }}
+    </div>
   </div>
 </section>
 

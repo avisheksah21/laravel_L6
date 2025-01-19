@@ -59,9 +59,6 @@
 
                         <div class="detail-box">
                             <h6>
-                                Category: {{$data->category_name}}
-                            </h6>
-                            <h6>
                                 Available Quantity
                                 <span>
                                     {{$data->quantity}}

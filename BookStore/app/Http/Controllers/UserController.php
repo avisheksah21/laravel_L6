@@ -19,14 +19,14 @@ class UserController extends Controller
 
     public function home()
     {
-        $product = Product::all();
+        $product = Product::paginate(10);
         $categories = Category::all();
         return view('home.index', compact('product','categories'));
     }
 
     public function login_home()
     {
-        $product = Product::all();
+        $product = Product::paginate(10);
         $categories = Category::all();
         return view('home.index', compact('product','categories'));
     }
@@ -40,10 +40,6 @@ class UserController extends Controller
 
     public function product_search(Request $request)
     {
-        // $data = $request->input('search');
-        // $product = Product::where('title','LIKE','%'.$data.'%')->get();
-        // return view('home.index', compact('product'));
-
         $search = $request->input('search');
         $category = $request->input('category');
 
@@ -59,7 +55,7 @@ class UserController extends Controller
             $query->where('category_id', $category);
         }
 
-        $product = $query->get();
+        $product = $query->paginate(10);
         $categories = Category::all(); // Fetch all categories for the dropdown
 
         return view('home.index', compact('product', 'categories'));
