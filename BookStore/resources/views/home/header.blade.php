@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg custom_nav-container ">
     <a class="navbar-brand" href="index.html">
       <span>
-        Giftos
+        LARABOOKS
       </span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -16,23 +16,25 @@
         <li class="nav-item active">
           <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="shop.html">
-            Shop
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="why.html">
-            Why Us
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="testimonial.html">
-            Testimonial
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact Us</a>
+        <li>
+
+          <form action="{{url('product_search')}}" method="GET">
+            <input type="search" name="search" placeholder="Search by title">
+            <select name="category">
+              <option value="">All Categories</option>
+
+              @if(isset($categories))
+          @foreach($categories as $category)
+        <option value="{{ $category->id }}"{{ request('category')==$category->id ? 'selected' : '' }}>{{ $category->category_name }}</option>
+      @endforeach
+        @endif
+
+
+            </select>
+            <input type="submit" class="btn btn-secondary" value="Search">
+          </form>
+
+          
         </li>
       </ul>
       <div class="user_option">
@@ -57,7 +59,7 @@
       </a>
     @endauth
     @endif
-        
+
       </div>
     </div>
   </nav>

@@ -52,3 +52,5 @@ Route::put('update_category/{id}', [AdminController::class,'update_category'])->
 Route::delete('delete_category/{id}', [AdminController::class,'delete_category'])->middleware(['auth','admin'])->name('delete_category');
 
 Route::delete('delete_product/{id}', [AdminController::class,'delete_product'])->middleware(['auth','admin'])->name('delete_product');
+
+Route::get('product_search', [UserController::class,'product_search']);
