@@ -1,13 +1,9 @@
-<section class="info_section  layout_padding2-top">
-      <!-- footer section -->
-    <footer class=" footer_section">
-      <div class="container">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Web Tech Knowledge</a>
-        </p>
-      </div>
-    </footer>
-    <!-- footer section -->
-
-  </section>
+<!-- footer section -->
+<footer class=" footer_section">
+  <div class="container">
+    <p>
+      &copy; Coded By Avishek
+    </p>
+  </div>
+</footer>
+<!-- footer section -->

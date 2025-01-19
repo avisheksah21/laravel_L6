@@ -1,20 +1,18 @@
 <!-- header section strats -->
 <header class="header_section">
   <nav class="navbar navbar-expand-lg custom_nav-container ">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="{{ url('/') }}">
       <span>
         LARABOOKS
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class=""></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color:rgb(167, 202, 169)">
       <ul class="navbar-nav  ">
         <li class="nav-item active">
-          <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" style="margin-right: 150px;" href="{{url('/')}}">Home <span
+              class="sr-only">(current)</span></a>
         </li>
         <li>
 
@@ -25,7 +23,8 @@
 
               @if(isset($categories))
           @foreach($categories as $category)
-        <option value="{{ $category->id }}"{{ request('category')==$category->id ? 'selected' : '' }}>{{ $category->category_name }}</option>
+        <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+        {{ $category->category_name }}</option>
       @endforeach
         @endif
 
@@ -34,10 +33,10 @@
             <input type="submit" class="btn btn-secondary" value="Search">
           </form>
 
-          
+
         </li>
       </ul>
-      <div class="user_option">
+      <div class="user_option" style="margin-left: 100px">
         @if (Route::has('login'))
       @auth
       <form style="padding: 10px;" method="POST" action="{{ route('logout') }}">

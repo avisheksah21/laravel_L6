@@ -14,7 +14,8 @@ class UserController extends Controller
     {
         $user = User::where('usertype', 'user')->get()->count();
         $product_count = Product::all()->count();
-        return view('admin.index', compact('user', 'product_count'));
+        $category_count = Category::all()->count();
+        return view('admin.index', compact('user', 'product_count','category_count'));
     }
 
     public function home()

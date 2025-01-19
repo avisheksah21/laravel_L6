@@ -5,14 +5,14 @@
     @include('home.css')
 
     <style type="text/css">
-        .div_center{
+        .div_center {
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 30px;
         }
 
-        .detail_box{
+        .detail_box {
             padding: 15px;
         }
     </style>
@@ -30,7 +30,7 @@
         <div class="container">
             <div class="heading_container heading_center">
                 <h2>
-                    Latest Products
+                    Products
                 </h2>
             </div>
             <div class="row">
@@ -70,7 +70,7 @@
                             <p>
                                 {{$data->description}}
                             </p>
-                            
+
                         </div>
 
                     </div>
@@ -87,12 +87,7 @@
     @include('home.footer')
 
 
-    <script src="{{asset('s/jqjuery-3.4.1.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-    </script>
-    <script src="{{asset('js/custom.js')}}"></script>
-
+    @include('home.script')
 </body>
 
 </html>

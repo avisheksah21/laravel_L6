@@ -4,7 +4,7 @@
   <div class="container">
     <div class="heading_container heading_center">
       <h2>
-        Latest Products
+        Products
       </h2>
     </div>
     <div class="row">

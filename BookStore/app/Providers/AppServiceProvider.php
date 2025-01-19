@@ -8,6 +8,8 @@ use Illuminate\Pagination\Paginator;
 use App\Models\Category;
 use Illuminate\Support\Facades\View;
 
+use Faker\Factory as FakerFactory;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -27,6 +29,9 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             $categories = Category::all(); // Fetch all categories
             $view->with('categories', $categories); // Pass categories to all views
+        });
+        $this->app->singleton(\Faker\Generator::class, function () {
+            return FakerFactory::create('en_US');
         });
     }
 }

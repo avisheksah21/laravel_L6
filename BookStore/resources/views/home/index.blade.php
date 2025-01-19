@@ -3,21 +3,24 @@
 
 <head>
   @include('home.css')
+  <style>
+        body {
+            background-color:rgb(167, 202, 169); /* Light gray background */
+        }
+        .hero_area {
+            background-color:rgb(244, 178, 178); /* Light blue background */
+        }
+    </style>
 </head>
 
 <body>
   <div class="hero_area">
-   @include('home.header')
+    @include('home.header')
   </div>
   @include('home.product')
   @include('home.footer')
 
-
-  <script src="{{asset('s/jqjuery-3.4.1.min.js')}}"></script>
-  <script src="{{asset('js/bootstrap.js')}}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <script src="{{asset('js/custom.js')}}"></script>
+  @include('home.script')
 
 </body>
 

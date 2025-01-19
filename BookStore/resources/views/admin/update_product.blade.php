@@ -50,8 +50,8 @@
               <select name="category">
                 <option value="{{$data->category}}">{{$data->category}}</option>
                 @foreach ($category as $categories)
-                <option value="{{$categories->category_name}}">{{$categories->category_name}}</option>
-                @endforeach
+          <option value="{{$categories->category_name}}">{{$categories->category_name}}</option>
+        @endforeach
               </select>
             </div>
             <div>
@@ -71,15 +71,7 @@
       </div>
     </div>
   </div>
-  <!-- JavaScript files-->
-  <script src="{{asset('admincss/vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('admincss/vendor/popper.js/umd/popper.min.js')}}"> </script>
-  <script src="{{asset('admincss/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-  <script src="{{asset('admincss/vendor/jquery.cookie/jquery.cookie.js')}}"> </script>
-  <script src="{{asset('admincss/vendor/chart.js/Chart.min.js')}}"></script>
-  <script src="{{asset('admincss/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
-  <script src="{{asset('admincss/js/charts-home.js')}}"></script>
-  <script src="{{asset('admincss/js/front.js')}}"></script>
+  < @include('admin.scripts')
 </body>
 
 </html>
