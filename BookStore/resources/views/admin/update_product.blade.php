@@ -48,7 +48,7 @@
             <div>
               <label>category</label>
               <select name="category">
-                <option value="{{$data->category}}">{{$data->category}}</option>
+                <option value="{{$data->category}}">{{$data->category->category_name}}</option>
                 @foreach ($category as $categories)
           <option value="{{$categories->category_name}}">{{$categories->category_name}}</option>
         @endforeach
@@ -56,7 +56,7 @@
             </div>
             <div>
               <label>Image</label>
-              <img src="/products/{{$data->image}}" alt="image">
+              <img src="/{{$data->image}}" alt="image">
             </div>
             <div>
               <label>Change Image</label>

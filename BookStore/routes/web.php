@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EsewaController;
 
-Route::get('/', [UserController::class,'home'] );
+Route::get('/', [UserController::class,'home'] )->name('home');
 
 Route::get('/dashboard', [UserController::class,'login_home'] )->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -59,3 +59,7 @@ Route::get('product_search', [UserController::class,'product_search']);
 Route::get('esewa', [UserController::class,'esewa_form'])->middleware('auth','verified')->name('esewa_form');
 
 Route::get('payment_verify', [EsewaController::class,'payment_verify']);
+
+Route::get('/payment_success', [EsewaController::class, 'payment_success'])->name('payment_success');
+
+Route::get('/payment_failed', [EsewaController::class, 'payment_failed'])->name('payment_failed');
