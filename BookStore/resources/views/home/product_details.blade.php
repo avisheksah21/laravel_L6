@@ -38,7 +38,7 @@
                     <div class="box">
 
                         <div class="div_center">
-                            <img width="400" src="{{$data->image}}" alt="image">
+                            <img width="400" src="{{asset($data->image)}}" alt="image">
                         </div>
 
                         <div class="detail-box">

@@ -55,10 +55,10 @@
                             <tr>
                                 <td>{{$products->title}}</td>
                                 <td>{{$products->description}}</td>
-                                <td>{{$products->category}}</td>
+                                <td>{{$products->category->id}}</td>
                                 <td>{{$products->price}}</td>
                                 <td>{{$products->quantity}}</td>
-                                <td><img height="120" width="120" alt="image" src="products/{{$products->image}}"></td>
+                                <td><img height="120" width="120" alt="image" src="{{$products->image}}"></td>
                                 <td>
                                     <a class="btn btn-success" href="{{url('update_product', $products->id)}}">Update</a>
                                 </td>

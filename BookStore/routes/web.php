@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EsewaController;
 
 Route::get('/', [UserController::class,'home'] );
 
@@ -57,3 +58,4 @@ Route::get('product_search', [UserController::class,'product_search']);
 
 Route::get('esewa', [UserController::class,'esewa_form'])->name('esewa_form');
 
+Route::get('payment_verify', [EsewaController::class,'payment_verify']);

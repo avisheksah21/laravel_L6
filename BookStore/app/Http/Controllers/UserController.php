@@ -62,8 +62,36 @@ class UserController extends Controller
         return view('home.index', compact('product', 'categories'));
     }
 
+    public function generateHmacBase64($key, $message)
+{
+    // Generate the HMAC-SHA256 hash
+    $hmacHash = hash_hmac('sha256', $message, $key, true);
+
+    // Encode the hash in Base64
+    return base64_encode($hmacHash);
+}
+
     public function esewa_form()
     {
-        return view('home.esewa_form');
+        // Fetch the product price (mocked as fetching the first product)
+    $product = Product::first();
+    $totalAmount = $product->price ?? 0; // Handle cases where no product exists
+    $taxAmount = $totalAmount - 10;
+
+    // Generate random transaction UUID
+    $transactionUuid = sprintf('%02d-%03d-%02d', random_int(10, 99), random_int(100, 999), random_int(10, 99));
+
+    // Secret key for HMAC
+    $secretKey = '8gBm/:&EnhH.1/q';
+
+    // Generate the message for HMAC
+    $message = "total_amount={$totalAmount},transaction_uuid={$transactionUuid},product_code=EPAYTEST";
+
+    // Generate the signature
+    $signature = base64_encode(hash_hmac('sha256', $message, $secretKey, true));
+
+    // Pass data to the view
+    return view('home.esewa_form', compact('totalAmount', 'taxAmount', 'transactionUuid', 'signature'));
+
     }
 }
