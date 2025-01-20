@@ -15,6 +15,20 @@
         .detail_box {
             padding: 15px;
         }
+        h4{
+            font-weight: 800;
+        }
+        .available-quantity{
+            margin-bottom: 100px;
+        }
+        .buy-now{
+            position: absolute;
+            background-color: green;
+            border: 1px solid lightgreen;
+            border-radius: 10px;
+            color: white;
+            padding: 10px 20px;
+        }
     </style>
 </head>
 
@@ -42,9 +56,9 @@
                         </div>
 
                         <div class="detail-box">
-                            <h6>
+                            <h4>
                                 {{$data->title}}
-                            </h6>
+                            </h4>
                             <h6>
                                 Price
                                 <span>
@@ -53,7 +67,7 @@
                             </h6>
                         </div>
 
-                        <div class="detail-box">
+                        <div class="detail-box available-quantity">
                             <h6>
                                 Available Quantity
                                 <span>
@@ -70,11 +84,14 @@
                         </div>
 
                     </div>
+
+                    @auth
                     <div >
                         <h6>
-                            <a href="{{route('esewa_form')}}">Buy Now</a>
+                            <a class="buy-now" href="{{route('esewa_form')}}">Buy Now</a>
                         </h6>
                     </div>
+                    @endauth
                 </div>
 
             </div>

@@ -56,6 +56,6 @@ Route::delete('delete_product/{id}', [AdminController::class,'delete_product'])-
 
 Route::get('product_search', [UserController::class,'product_search']);
 
-Route::get('esewa', [UserController::class,'esewa_form'])->name('esewa_form');
+Route::get('esewa', [UserController::class,'esewa_form'])->middleware('auth','verified')->name('esewa_form');
 
 Route::get('payment_verify', [EsewaController::class,'payment_verify']);
