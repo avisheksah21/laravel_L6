@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('categories', $categories); // Pass categories to all views
         });
         $this->app->singleton(\Faker\Generator::class, function () {
-            return FakerFactory::create('en_US');
+            return FakerFactory::create('en_GB');
         });
     }
 }

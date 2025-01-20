@@ -34,15 +34,11 @@
                 </h2>
             </div>
             <div class="row">
-
-
-
-
                 <div class="col-md-12">
                     <div class="box">
 
                         <div class="div_center">
-                            <img width="400" src="/products/{{$data->image}}" alt="image">
+                            <img width="400" src="{{$data->image}}" alt="image">
                         </div>
 
                         <div class="detail-box">
@@ -73,6 +69,11 @@
 
                         </div>
 
+                    </div>
+                    <div >
+                        <h6>
+                            <a href="{{route('esewa_form')}}">Buy Now</a>
+                        </h6>
                     </div>
                 </div>
 

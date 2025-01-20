@@ -61,4 +61,9 @@ class UserController extends Controller
 
         return view('home.index', compact('product', 'categories'));
     }
+
+    public function esewa_form()
+    {
+        return view('home.esewa_form');
+    }
 }
